@@ -6,15 +6,28 @@
 
 Call the OpenAI Chat Completions API from Python with an API key loaded from `.env` (no hardcoded secrets).
 
-## Suggested layout
+## Layout
 
 ```text
 calling-an-api/
-  .env                 # OPENAI_API_KEY=sk-...
-  .gitignore           # ignore .env
-  chat_gpt_request.py  # CLIENT + messages + print response
-  requirements.txt     # openai, python-dotenv
+  .env.example
+  .gitignore
+  chat_gpt_request.py
+  requirements.txt
 ```
+
+## Setup and run
+
+```bash
+cd projects/calling-an-api
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+# Edit .env: OPENAI_API_KEY=sk-...
+python chat_gpt_request.py
+```
+
+You should see a one-sentence assistant reply printed to the terminal.
 
 ## Core pattern (from lesson)
 
@@ -38,9 +51,9 @@ print(response.choices[0].message.content)
 
 ## Dependencies
 
-- `pip install openai python-dotenv`
+- `openai`, `python-dotenv`
 
 ## Next modules
 
-- `chat-completions-summarizer` — system prompt + file input
-- `api-keys-and-env` — key setup only (prerequisite detail)
+- [`chat-completions-summarizer`](../chat-completions-summarizer/) — system prompt + file input
+- [`api-keys-and-env`](../api-keys-and-env/) — key setup only (do this first if you skipped it)

@@ -1,8 +1,8 @@
 # Finxter AI Engineering — course index
 
-**Public repo (format + application reference):** [github.com/obversarystudios/applied-ai-engineering](https://github.com/obversarystudios/applied-ai-engineering)
+**Public mirror (format, application, deployment):** [github.com/obversarystudios/applied-ai-engineering](https://github.com/obversarystudios/applied-ai-engineering)
 
-Source: [Finxter Academy](https://academy.finxter.com/) lessons (17 parts, 3 tracks). Lesson PDFs are **not** in this repository; use your own course materials locally.
+Source: [Finxter Academy](https://academy.finxter.com/) PDF exports in this folder (17 lessons, 3 tracks).
 
 Modular project stubs live in [`projects/`](projects/) — one directory per teachable unit or capstone.
 

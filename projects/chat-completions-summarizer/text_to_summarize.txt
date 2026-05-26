@@ -1,3 +1,6 @@
-Replace this paragraph with your own source text. The summarizer module reads this file
-and sends it to the OpenAI Chat Completions API using a system prompt that asks for
-three bullet points. Keep API keys in .env only.
+The OpenAI API lets applications send prompts to language models and receive
+text completions. A typical workflow loads the API key from environment variables
+(using python-dotenv and a local .env file), constructs a client, and calls
+chat.completions.create with a model name and a list of messages. System messages
+set behavior; user messages carry the task. For summarization, you point the user
+message at source text—often read from a file—and ask for a concise structured reply.

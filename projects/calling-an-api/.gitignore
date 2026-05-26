@@ -3,7 +3,3 @@
 __pycache__/
 *.pyc
 output/
-screenshots/
-assets/
-*.mp3
-.DS_Store

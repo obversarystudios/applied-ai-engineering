@@ -42,7 +42,9 @@ for mod_dir in "$LAB_ROOT"/projects/*/; do
       .env|.env.*|*.pdf) continue ;;
     esac
     cp "$f" "$dest_mod/$base"
-  done < <(find "$mod_dir" -maxdepth 1 -type f \( -name '*.py' -o -name '*.txt' \) -print0 2>/dev/null)
+  done < <(find "$mod_dir" -maxdepth 1 -type f \
+    \( -name '*.py' -o -name '*.txt' -o -name '.env.example' \
+       -o -name 'requirements.txt' -o -name '.gitignore' \) -print0 2>/dev/null)
 done
 
 echo "Done. Review with: cd $STAGE_ROOT && git status"

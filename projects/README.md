@@ -2,7 +2,7 @@
 
 Each subdirectory is a **standalone learning unit**. Start with atomic modules, then capstones.
 
-Lesson PDFs are **not** in this GitHub repo (use your own Finxter/local copies). These dirs are for **your code** as you work through the lessons.
+PDFs stay in the parent folder [`../`](../); these dirs are for **your code** as you work through the lessons.
 
 ## Suggested build order
 
