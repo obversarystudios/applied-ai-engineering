@@ -1,0 +1,28 @@
+---
+description: "applied-ai-engineering — modular curriculum, public GitHub"
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# applied-ai-engineering
+
+Public curriculum monorepo for **format**, **application**, and **deployment** patterns.
+
+## Discipline
+
+- No secrets, `.env`, PDFs, or lab paths (`mnt/ai_lab_os`, `05_llc`) in commits.
+- One `.venv` per `projects/<module>/`.
+- Prefer small PRs: one module or track at a time.
+- README defers narrative to [obversarystudios.org](https://obversarystudios.org); eval research: [observatory](https://github.com/obversarystudios/observatory).
+
+## Pre-push
+
+```bash
+rg -i "mnt/ai_lab_os|05_llc|obversary_personal|sk-[a-zA-Z0-9]{20,}" .
+```
+
+## Layout
+
+- `INDEX.md` — lesson ↔ module map
+- `projects/README.md` — build order, recipes A–L
+- `python_cheatsheet.md` — M01–M15 deployment patterns

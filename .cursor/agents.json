@@ -1,0 +1,22 @@
+{
+  "agents": [
+    {
+      "name": "verify-env",
+      "description": "Check OPENAI_API_KEY from .env (api-keys-and-env)",
+      "command": "bash -lc 'cd projects/api-keys-and-env && python3 verify_env.py'",
+      "icon": "🔑"
+    },
+    {
+      "name": "chat-api",
+      "description": "Run minimal Chat Completions example",
+      "command": "bash -lc 'cd projects/calling-an-api && python3 chat_gpt_request.py'",
+      "icon": "💬"
+    },
+    {
+      "name": "summarizer",
+      "description": "Summarize text_to_summarize.txt",
+      "command": "bash -lc 'cd projects/chat-completions-summarizer && python3 chat_gpt_request.py'",
+      "icon": "📝"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  structure-and-secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Module structure
+        run: |
+          set -e
+          for dir in projects/*/; do
+            name="$(basename "$dir")"
+            [[ "$name" == "*" ]] && continue
+            test -f "$dir/README.md" || { echo "Missing README: $dir"; exit 1; }
+            test -f "$dir/requirements.txt" || { echo "Missing requirements.txt: $dir"; exit 1; }
+          done
+          echo "All modules have README.md and requirements.txt"
+
+      - name: Secret pattern scan
+        run: |
+          if rg -i "mnt/ai_lab_os|05_llc|obversary_personal" . 2>/dev/null; then
+            echo "Found lab-only path references"
+            exit 1
+          fi
+          if rg "sk-[a-zA-Z0-9]{20,}" . --glob '!.github/**' 2>/dev/null; then
+            echo "Found possible API key material"
+            exit 1
+          fi
+          echo "No obvious secret/path leaks"
+
+      - name: Compile Python reference files
+        run: |
+          if compgen -G "**/*.py" > /dev/null; then
+            python3 -m compileall -q projects
+          fi

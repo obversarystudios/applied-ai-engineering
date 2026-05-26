@@ -1,0 +1,1 @@
+# Install Ollama from https://ollama.com — no pip packages required for CLI usage

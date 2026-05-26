@@ -1,0 +1,6 @@
+moviepy
+openai
+python-dotenv
+requests
+selenium
+pillow
